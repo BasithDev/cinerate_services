@@ -1,12 +1,21 @@
 # CineRate Microservices
 
-This repository contains the microservices for the CineRate application, a movie and TV show review platform. Each service is containerized and can be run, tested, and deployed independently.
+This repository contains the microservices for the CineRate application, a movie and TV show review platform. Each service is containerized and can be run, tested, and deployed independently. The services are managed as Git submodules, each with its own repository.
 
 ## Services
+Each service is maintained in its own Git repository and included here as a submodule:
+
 - **api-gateway**: Handles routing, authentication, and rate limiting. Proxies requests to other services.
+  - Repository: https://github.com/BasithDev/cinerate-api-gateway.git
+
 - **user-service**: Manages user registration, login, and profile operations.
+  - Repository: https://github.com/BasithDev/cinerate-user-service.git
+
 - **review-service**: Handles user reviews for movies and TV shows.
+  - Repository: https://github.com/BasithDev/cinerate-review-service.git
+
 - **watchlist-service**: Manages user watchlists.
+  - Repository: https://github.com/BasithDev/cinerate-watchlist-service.git
 
 ## Development
 
@@ -16,6 +25,19 @@ This repository contains the microservices for the CineRate application, a movie
 - Docker (for building images)
 
 ### Running Locally
+
+#### Clone with Submodules
+To clone this repository with all submodules:
+```sh
+git clone --recurse-submodules https://github.com/BasithDev/cinerate_services.git
+```
+
+If you've already cloned the repository without submodules, initialize them with:
+```sh
+git submodule update --init --recursive
+```
+
+#### Starting Services
 Each service can be started individually:
 ```sh
 cd <service-name>
