@@ -8,21 +8,36 @@ services:
       - user-service
       - review-service
       - watchlist-service
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
   user-service:
     build: ./user-service
     ports:
       - "3001:3001"
     restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
   review-service:
     build: ./review-service
     ports:
       - "3002:3002"
     restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
   watchlist-service:
     build: ./watchlist-service
     ports:
       - "3003:3003"
     restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
   mongodb:
     image: mongo:latest
     container_name: mongodb
@@ -31,3 +46,14 @@ services:
     volumes:
       - ./data:/data/db
     restart: unless-stopped
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+volumes:
+  redis-data:
