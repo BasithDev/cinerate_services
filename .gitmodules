@@ -1,12 +1,12 @@
 [submodule "api-gateway"]
 	path = api-gateway
-	url = ./api-gateway
+	url = https://github.com/BasithDev/cinerate-api-gateway.git
 [submodule "review-service"]
 	path = review-service
-	url = ./review-service
+	url = https://github.com/BasithDev/cinerate-review-service.git
 [submodule "user-service"]
 	path = user-service
-	url = ./user-service
+	url = https://github.com/BasithDev/cinerate-user-service.git
 [submodule "watchlist-service"]
 	path = watchlist-service
-	url = ./watchlist-service
+	url = https://github.com/BasithDev/cinerate-watchlist-service.git
