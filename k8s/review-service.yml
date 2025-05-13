@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: review-service
-        image: basith1519/cinerate-review-service:v1.0.2
+        image: basith1519/cinerate-review-service:v1.0.3
         ports:
         - containerPort: 3002
         envFrom:
