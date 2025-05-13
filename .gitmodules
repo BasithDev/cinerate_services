@@ -1,0 +1,12 @@
+[submodule "api-gateway"]
+	path = api-gateway
+	url = ./api-gateway
+[submodule "review-service"]
+	path = review-service
+	url = ./review-service
+[submodule "user-service"]
+	path = user-service
+	url = ./user-service
+[submodule "watchlist-service"]
+	path = watchlist-service
+	url = ./watchlist-service

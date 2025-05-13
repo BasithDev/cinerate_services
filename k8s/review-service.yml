@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cinerate-review-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cinerate-review-service
+  template:
+    metadata:
+      labels:
+        app: cinerate-review-service
+    spec:
+      containers:
+      - name: review-service
+        image: basith1519/cinerate-review-service:v1.0.2
+        ports:
+        - containerPort: 3002
+        envFrom:
+          - secretRef:
+              name: review-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cinerate-review-service-svc
+spec:
+  type: NodePort
+  selector:
+    app: cinerate-review-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3002
