@@ -11,10 +11,14 @@ spec:
     metadata:
       labels:
         app: cinerate-watchlist-service
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "3003"
     spec:
       containers:
       - name: watchlist-service
-        image: basith1519/cinerate-watchlist-service:v1.0.3
+        image: basith1519/cinerate-watchlist-service:v1.0.7
         ports:
         - containerPort: 3003
         envFrom:

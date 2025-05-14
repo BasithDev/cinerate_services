@@ -36,19 +36,19 @@ data:
 
       - job_name: 'user-service'
         static_configs:
-          - targets: ['cinerate-user-service-svc:80']
+          - targets: ['cinerate-user-service-svc:3001']
 
       - job_name: 'api-gateway'
         static_configs:
-          - targets: ['cinerate-api-gateway-svc:80']
+          - targets: ['cinerate-api-gateway-svc:3000']
 
       - job_name: 'review-service'
         static_configs:
-          - targets: ['cinerate-review-service-svc:80']
+          - targets: ['cinerate-review-service-svc:3002']
 
       - job_name: 'watchlist-service'
         static_configs:
-          - targets: ['cinerate-watchlist-service-svc:80']
+          - targets: ['cinerate-watchlist-service-svc:3003']
 
       - job_name: 'kube-state-metrics'
         static_configs:
