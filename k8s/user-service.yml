@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: basith1519/cinerate-user-service:v1.0.9
+        image: basith1519/cinerate-user-service:v1.1.0
         ports:
         - containerPort: 3001
         envFrom:
