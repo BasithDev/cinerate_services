@@ -17,6 +17,9 @@ Each service is maintained in its own Git repository and included here as a subm
 - **watchlist-service**: Manages user watchlists.
   - Repository: https://github.com/BasithDev/cinerate-watchlist-service.git
 
+- **Cinerate-Module Federation**: Manages user watchlists.
+  - Repository: https://github.com/BasithDev/cine_rate_mfe.git
+
 ## Development
 
 ### Prerequisites
